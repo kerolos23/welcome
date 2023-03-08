@@ -1,0 +1,267 @@
+/// @param(pharagra: font-size, btm: width, btm: height, new h3: font-size, news p: font-size, box3: font-size, boxp: font-size, pct img: width, links a: font-size)
+/// media mixin for small dvcs and tablets 
+
+@mixin media($pr-font, $btm-w, $btm-h, $news-h3, $news-p, $box-h3, $box-p, $pct-w, $links-size){
+    .head{
+        justify-content: flex-start;
+        height: 5em;
+        margin: 0;
+        padding-top: 2em;
+        padding-left: 1.3em;
+    }
+    .links{
+        display: flex;
+        position: fixed;
+        width: 50%;
+        height: 100%;
+        right: 0;
+        top: -100%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 2em;
+        background: #fff;
+        font-weight: 900;
+        z-index: 999;
+        transition: .5s ease;
+        a {
+            font-size: $links-size;
+        }
+    }
+    .open {
+        top:0;
+    }
+    section {
+        grid-template-columns: 50% 50%;
+        margin: 20px;
+        grid-template-rows: auto 25px 162px 15px 240px 25px repeat(3, auto) 40px 200px 40px 200px 40px;
+    }
+    .photo {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 1;
+    }
+    .pharag {
+        grid-row-start: 3;
+        grid-row-end: 4;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .pharag p {
+        font-size: 2.9em;
+    }
+    .pharagra {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 5;
+        grid-row-end: 5;
+        font-size: $pr-font;
+        font-weight: 900;
+        color: #969796;
+    }
+    .btm {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        height: $btm-h;
+        display: flex;
+        width: $btm-w;
+        align-items: center;
+    }
+    .btm a{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.1em;
+    }
+    .news{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 7;
+        grid-row-end: 10;
+    }
+    .news h3 {
+        font-size: $news-h3;
+    }
+    .news p {
+        font-size: $news-p;
+        padding-right: 6px;
+    }
+    .retro-pct {
+        grid-row-start: 11;
+        grid-row-end: 11;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        img {
+            width: $pct-w;
+        }
+    }
+    .retro-ph {
+        grid-row-start: 11;
+        grid-row-end: 11;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .laptop-pct {
+        grid-row-start: 13;
+        grid-row-end: 13;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        img {
+            width: $pct-w;
+        }
+    }
+    .laptop-ph {
+        grid-row-start: 13;
+        grid-row-end: 13;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .gaming-pct {
+        grid-row-start: 15;
+        grid-row-end: 15;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        img {    
+        width: $pct-w;
+        }
+    }
+    .gaming-ph {
+        grid-row-start: 15;
+        grid-row-end: 15;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .boxp {
+        font-size: $box-p;
+        color: #3a3232d6;
+        font-weight: 500;
+    }
+    .box3{
+        font-size: $box-h3;
+    }
+    .hamburger{
+        display: flex;
+        position: fixed;
+        right: 8%;
+        top: 2.5em;
+        width: 7%;
+        height: 8%;
+        border: none;
+        align-items: center;
+        padding: 0;
+        flex-direction: column;
+        background-color: transparent;
+    }
+    .bar1, .bar2, .bar3{
+        display: flex;
+        width: 100%;
+        height: 0.3em;
+        background: #020202;
+        padding: 0;
+        margin: 0;
+        transition: .7s ease;        
+    }
+    .bar1{
+        margin-bottom: 20%;
+    }
+    .bar2{
+        margin-bottom: 20%;
+    }
+    .rotate1, .rotate2{
+        display: flex;
+        width: 100%;
+        height: 0.3em;
+        background: #222;
+        padding: 0;
+        margin: 0;
+        transition: .7s ease;
+    }
+    .rotate1{
+        transform: rotate(45deg);
+    }
+    .rotate2 {
+        position: absolute       ;
+        transform: rotate(-45deg);
+    }
+    .opacity {
+        opacity: 0;
+    }
+}
+
+/// @param(pharag p: font-size, news h3: padding, news h2: font-size, new h3: font-size, news p: font-size, btm: width, btm: height, box3: font-size, boxp: font-size)
+/// media mixin for small disktop
+
+@mixin media-md($pr-p, $nw-padding, $new-h2, $new-h3, $new-p, $btm-w, $btm-h, $bx-h3, $bx-p){
+    section {
+        grid-template-rows: 80px 70px auto 15px 240px 40px 100px;
+    }
+    .news h2 {
+        font-size: $new-h2;
+    }
+    .news h3 {
+        padding-top: $nw-padding;
+        font-size: $new-h3;
+    }
+    .news p {
+        padding-bottom: 22px;
+        padding-right: 8.5px;
+        font-size: $new-p;
+    }
+    .pharag p {
+        font-size: $pr-p;
+    }
+    .btm {
+        height: $btm-h;
+        display: flex;
+        width: $btm-w;
+        align-items: center;
+    }
+    .btm a{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.1em;
+    }
+    .laptop-pct{
+        img {
+            width: 100%;
+        }
+    }
+    .box3 {
+        font-size: $bx-h3;
+    }
+    .boxp {
+        font-size: $bx-p;
+    }
+}
+
+/// @param()
+/// media mixin for large disktop
+@mixin media-lg(){
+    .pharagra {
+        font-size: 1.25em;
+    }
+    .btm {
+        height: 3.3em;
+        display: flex;
+        width: 13.6em;
+        align-items: center;
+    }
+    .btm a{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.1em;
+    }
+    .links a {
+        font-size: 1em;
+    }
+}
+//$pr-font, $btm-w, $btm-h, $news-h3, $news-p, $box-h3, $box-p, $pct-w, $links-size

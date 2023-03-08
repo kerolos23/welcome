@@ -1,0 +1,26 @@
+.boxp{
+    font-size: .8em;
+    padding-top: 7px;
+    padding-left: 7px;
+    color: #000000d6;
+    font-weight: 300;
+}
+
+.box3{
+    font-size: 1em;
+    font-weight: 900;
+    padding-left: 7px;
+    padding-top: 7px;
+}
+
+.box3:hover{
+    color: #ec4a4a;
+    cursor: pointer;
+}
+
+.box2{
+    color: #a3a0a0bd;
+    padding-left: 7px;
+}
+
+
